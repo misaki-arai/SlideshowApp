@@ -13,7 +13,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    @IBAction func Tap(_ sender: Any) {
+    }
+    
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+        }
 }
 
