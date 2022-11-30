@@ -8,10 +8,18 @@
 import UIKit
 
 class ResultViewController: UIViewController {
+    
+    @IBOutlet weak var enlargeImage: UIImageView!
+    
+    let imageName = ["latte.jpeg", "schnitzel.jpeg", "pavlova.jpeg"]
+    var enlargeIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let name = imageName[enlargeIndex]
+        enlargeImage.image = UIImage(named: name)
+        
         // Do any additional setup after loading the view.
     }
     
