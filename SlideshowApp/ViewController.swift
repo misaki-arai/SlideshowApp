@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     
-    
     let imageName = ["latte.jpeg", "schnitzel.jpeg", "pavlova.jpeg"]
     var Index = 0
     
@@ -79,18 +78,25 @@ class ViewController: UIViewController {
                imageView.image = UIImage(named: name)
     }
 
-    @IBAction func Tap(_ sender: Any) {
+    @IBAction func tapImage(_ sender: Any) {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "nextView" {
           let ResultView = segue.destination as! ResultViewController
           ResultView.enlargeIndex = Index
+          
+          if self.timer != nil {
+                  self.timer.invalidate()
+                  self.timer = nil
+                  startButton.setTitle("START", for: .normal)
+                  button.isEnabled = true
+                  backButton.isEnabled = true
+                  }
       }
     }
         
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
     }
-        
 }
 
